@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Johnathon</title>
+  <title>孤岛</title>
   
-  <subtitle>First Blog</subtitle>
+  <subtitle>Le vent se lève, il faut tenter de vivre</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://johnathonblog.github.io/"/>
