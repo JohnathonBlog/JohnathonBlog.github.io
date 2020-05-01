@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://johnathonblog.github.io/"/>
-  <updated>2020-05-01T10:57:50.846Z</updated>
+  <updated>2020-05-01T11:17:03.720Z</updated>
   <id>https://johnathonblog.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Github资源收集</title>
+    <link href="https://johnathonblog.github.io/2020/05/01/github-resource-collections/"/>
+    <id>https://johnathonblog.github.io/2020/05/01/github-resource-collections/</id>
+    <published>2020-05-01T11:14:53.000Z</published>
+    <updated>2020-05-01T11:17:03.720Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Github资源"><a href="#Github资源" class="headerlink" title="Github资源"></a>Github资源</h2><h2 id="其他资源"><a href="#其他资源" class="headerlink" title="其他资源"></a>其他资源</h2>]]></content>
+    
+    <summary type="html">
+    
+      暂无描述
+    
+    </summary>
+    
+    
+      <category term="github" scheme="https://johnathonblog.github.io/categories/github/"/>
+    
+    
+      <category term="github" scheme="https://johnathonblog.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
     <title>OpenCV在Linux中的安装和编程入门</title>
-    <link href="https://johnathonblog.github.io/2020/05/01/1401/"/>
-    <id>https://johnathonblog.github.io/2020/05/01/1401/</id>
+    <link href="https://johnathonblog.github.io/2020/05/01/opencv_tutorial01/"/>
+    <id>https://johnathonblog.github.io/2020/05/01/opencv_tutorial01/</id>
     <published>2020-05-01T09:03:32.000Z</published>
-    <updated>2020-05-01T10:57:50.846Z</updated>
+    <updated>2020-05-01T11:13:43.115Z</updated>
     
     <content type="html"><![CDATA[<p>(本文主要参考OpenCV3官方文档)<br><a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">官方文档链接</a></p><h2 id="OpenCV在Linux中的安装"><a href="#OpenCV在Linux中的安装" class="headerlink" title="OpenCV在Linux中的安装"></a>OpenCV在Linux中的安装</h2><h3 id="依赖项"><a href="#依赖项" class="headerlink" title="依赖项"></a>依赖项</h3><ul><li>** ** - GCC 4.4.x or later<br>CMake 2.8.7 or higher<br>Git<br>GTK+2.x or higher, including headers (libgtk2.0-dev)<br>pkg-config<br>Python 2.6 or later and Numpy 1.5 or later with developer packages (python-dev, python-numpy)<br>ffmpeg or libav development packages: libavcodec-dev, libavformat-dev, libswscale-dev<br>[optional] libtbb2 libtbb-dev<br>[optional] libdc1394 2.x<br>[optional] libjpeg-dev, libpng-dev, libtiff-dev, libjasper-dev, libdc1394-22-dev<br>[optional] CUDA Toolkit 6.5 or higher</li></ul><h3 id="安装依赖项"><a href="#安装依赖项" class="headerlink" title="安装依赖项"></a>安装依赖项</h3><p>compiler：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential</span><br></pre></td></tr></table></figure><p>required：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev</span><br></pre></td></tr></table></figure><p>optional：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python-dev python-numpy \</span><br><span class="line">    libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev</span><br></pre></td></tr></table></figure><h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><p>下载源码：    （注意git切换版本）<br>cd ~/<my_working_directory><br>git clone <a href="https://github.com/opencv/opencv.git" target="_blank" rel="noopener">https://github.com/opencv/opencv.git</a><br>git clone <a href="https://github.com/opencv/opencv_contrib.git" target="_blank" rel="noopener">https://github.com/opencv/opencv_contrib.git</a></p><p>编译安装：<br>cd ~/opencv<br>mkdir build<br>cd build<br>cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..<br>make -j7<br>sudo make install</p><p>如果cmake出错可以使用<br>cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .. </p><p>可选择操作：<br>构建文件，进入&lt;cmake_build_dir/doc/&gt;目录<br>cd ~/opencv/build/doc/<br>make -j7 doxygen</p><p>下载运行测试程序<br>git clone <a href="https://github.com/opencv/opencv_extra.git" target="_blank" rel="noopener">https://github.com/opencv/opencv_extra.git</a></p><p>程序使用OpenCV的CMakeLists.txt文件样式：<br>cmake_minimum_required(VERSION 2.8)<br>project( DisplayImage )<br>find_package( OpenCV REQUIRED )<br>include_directories( ${OpenCV_INCLUDE_DIRS} )<br>add_executable( DisplayImage DisplayImage.cpp )<br>target_link_libraries( DisplayImage ${OpenCV_LIBS} )</p><p>加载和显示图片：<br>#include &lt;opencv2/core.hpp&gt;<br>#include &lt;opencv2/imgcodecs.hpp&gt;<br>#include &lt;opencv2/highgui.hpp&gt;<br>#include <iostream><br>#include <string><br>using namespace cv;<br>using namespace std;<br>int main( int argc, char** argv )<br>{<br>    String imageName( “../data/HappyFish.jpg” ); // by default<br>    if( argc &gt; 1)<br>    {<br>        imageName = argv[1];<br>    }<br>    Mat image;<br>    image = imread( imageName, IMREAD_COLOR ); // Read the file<br>    if( image.empty() )                      // Check for invalid input<br>    {<br>        cout &lt;&lt;  “Could not open or find the image” &lt;&lt; std::endl ;<br>        return -1;<br>    }<br>    namedWindow( “Display window”, WINDOW_AUTOSIZE ); // Create a window for display.<br>    imshow( “Display window”, image );                // Show our image inside it.<br>    waitKey(0); // Wait for a keystroke in the window<br>    return 0;<br>}</p><p>加载、修改和保存图像：<br>#include &lt;opencv2/opencv.hpp&gt;<br>using namespace cv;<br>int main( int argc, char<em>* argv )<br>{<br> char</em> imageName = argv[1];<br> Mat image;<br> image = imread( imageName, IMREAD_COLOR );<br> if( argc != 2 || !image.data )<br> {<br>   printf( “ No image data \n “ );<br>   return -1;<br> }<br> Mat gray_image;<br> cvtColor( image, gray_image, COLOR_BGR2GRAY );<br> imwrite( “../../images/Gray_Image.jpg”, gray_image );<br> namedWindow( imageName, WINDOW_AUTOSIZE );<br> namedWindow( “Gray image”, WINDOW_AUTOSIZE );<br> imshow( imageName, image );<br> imshow( “Gray image”, gray_image );<br> waitKey(0);<br> return 0;<br>}</p>]]></content>
     

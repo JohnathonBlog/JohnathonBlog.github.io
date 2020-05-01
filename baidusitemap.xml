@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://johnathonblog.github.io/2020/05/01/1401/</loc>
+    <loc>https://johnathonblog.github.io/2020/05/01/github-resource-collections/</loc>
+    <lastmod>2020-05-01</lastmod>
+  </url>  <url>
+    <loc>https://johnathonblog.github.io/2020/05/01/opencv_tutorial01/</loc>
     <lastmod>2020-05-01</lastmod>
   </url>  <url>
     <loc>https://johnathonblog.github.io/2020/04/23/hello-world/</loc>
